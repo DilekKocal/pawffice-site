@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pawffice – Fetching Synergy</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0 1rem;
+      font-family: 'Inter', sans-serif;
+      background-color: #f7f5f2;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      text-align: center;
+      padding-bottom: 6rem;
+    }
+
+    .logo {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .tagline {
+      font-size: 1rem;
+      font-weight: 400;
+      color: #666;
+      margin-bottom: 2rem;
+    }
+
+    .paw-spinner {
+      width: 40px;
+      height: 40px;
+      background-image: url("data:image/svg+xml,%3Csvg width='64' height='64' viewBox='0 0 64 64' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M32 12C33.6569 12 35 10.6569 35 9C35 7.34315 33.6569 6 32 6C30.3431 6 29 7.34315 29 9C29 10.6569 30.3431 12 32 12Z' fill='%23333'/%3E%3Cpath d='M44 20C45.6569 20 47 18.6569 47 17C47 15.3431 45.6569 14 44 14C42.3431 14 41 15.3431 41 17C41 18.6569 42.3431 20 44 20Z' fill='%23333'/%3E%3Cpath d='M20 20C21.6569 20 23 18.6569 23 17C23 15.3431 21.6569 14 20 14C18.3431 14 17 15.3431 17 17C17 18.6569 18.3431 20 20 20Z' fill='%23333'/%3E%3Cpath d='M24 32C24 27.5817 27.5817 24 32 24C36.4183 24 40 27.5817 40 32C40 36.4183 36.4183 40 32 40C27.5817 40 24 36.4183 24 32Z' fill='%23333'/%3E%3C/svg%3E");
+      background-size: contain;
+      background-repeat: no-repeat;
+      animation: spin 2s linear infinite;
+      margin-bottom: 1rem;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    .loading-text {
+      font-size: 1.1rem;
+      color: #444;
+      min-height: 1.5rem;
+    }
+
+    .footer {
+      margin-top: 4rem;
+      font-size: 0.9rem;
+      color: #aaa;
+    }
+  </style>
+</head>
+<body>
+  <div class="logo">Pawffice</div>
+  <div class="tagline">Coming soon: the only workplace platform where barking is a leadership strategy.</div>
+  <div class="paw-spinner"></div>
+  <div class="loading-text" id="loadingText">Fetching synergy…</div>
+  <div class="footer">“Every tail wag is a step toward innovation.” – Barkley McSniff</div>
+
+  <script>
+    const phrases = [
+      "Fetching synergy…",
+      "Aligning tails with vision…",
+      "Syncing asynchronous barks…",
+      "Curating cross-species chewability…",
+      "Looping in Legal…",
+      "Mentally preparing for Whiskers…"
+    ];
+    let index = 0;
+    const loadingText = document.getElementById('loadingText');
+    setInterval(() => {
+      index = (index + 1) % phrases.length;
+      loadingText.textContent = phrases[index];
+    }, 2500);
+  </script>
+</body>
+</html>
